@@ -116,3 +116,39 @@ async function* readSseStream(body) {
     }
   }
 }
+
+// ============================================================
+// MUSIC CONTROLS
+// ============================================================
+
+const musicEl = document.getElementById("bg-music");
+const musicToggleEl = document.getElementById("music-toggle");
+let isMusicPlaying = true;
+
+musicToggleEl.addEventListener("click", () => {
+  if (isMusicPlaying) {
+    musicEl.pause();
+    musicToggleEl.textContent = "🔇";
+    musicToggleEl.classList.add("muted");
+    musicToggleEl.title = "Unmute Background Music";
+  } else {
+    musicEl.play().catch(() => {
+      // Autoplay might be blocked, user needs to interact
+    });
+    musicToggleEl.textContent = "🔊";
+    musicToggleEl.classList.remove("muted");
+    musicToggleEl.title = "Mute Background Music";
+  }
+  isMusicPlaying = !isMusicPlaying;
+});
+
+// Try to autoplay on page load
+document.addEventListener("DOMContentLoaded", () => {
+  musicEl.volume = 0.3; // Set low volume
+  musicEl.play().catch(() => {
+    // Autoplay blocked, user can click toggle
+    musicToggleEl.textContent = "🔇";
+    musicToggleEl.classList.add("muted");
+    isMusicPlaying = false;
+  });
+});

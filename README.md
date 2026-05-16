@@ -121,6 +121,16 @@ Save and restart the dev server (Ctrl-C, then `npm run dev`).
 
 Open **`public/index.html`**. Look for the comment that says "CHANGE THE TEXT BELOW." Edit the title, subtitle, and the AI's first greeting.
 
+### Add background music
+
+The app includes a music toggle button in the top-right corner. To add your own background music:
+
+1. Add an audio file (MP3 or OGG) to the `public/` folder, e.g., `background-music.mp3`
+2. The audio element in `index.html` will automatically play it on loop at low volume
+3. Users can toggle the music on/off with the 🔊/🔇 button
+
+For sci-fi ambiance, try ambient space music or electronic tracks. Keep files small (< 5MB) for fast loading.
+
 ---
 
 ## 7. Deploy to the internet (Vercel)

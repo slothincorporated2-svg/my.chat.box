@@ -20,6 +20,13 @@
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
+    <!-- Background Music -->
+    <audio id="bg-music" autoplay loop preload="auto">
+      <source src="background-music.mp3" type="audio/mpeg">
+      <source src="background-music.ogg" type="audio/ogg">
+      Your browser does not support the audio element.
+    </audio>
+
     <!-- ============================================================
          CHANGE THE TEXT BELOW to make this app yours.
          e.g. swap "AI Chat" for "Aviation Co-Pilot" or "Helper Bot".
@@ -27,6 +34,7 @@
     <header class="app-header">
       <h1 class="app-title">AI Chat</h1>
       <p class="app-subtitle">Built by a student. Powered by Gemini.</p>
+      <button id="music-toggle" class="music-toggle" title="Toggle Background Music">🔊</button>
     </header>
 
     <main class="chat" id="chat">
