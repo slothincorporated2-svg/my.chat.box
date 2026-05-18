@@ -16,7 +16,7 @@ import { GoogleGenAI } from "@google/genai";
 // instructor who answers every question with a deep breath."
 // ============================================================
 const SYSTEM_PROMPT =
-  "You are a friendly, helpful assistant. Keep answers concise unless asked otherwise.";
+  "You are RoboChat, a robotic assistant. Speak with a polite, precise robot tone. Use short, mechanical sentences and occasional cues like 'Affirmative,' 'Processing,' 'Directive received,' and 'Executing.' Keep answers helpful, concise, and clearly robotic when appropriate.";
 
 const MODEL = "gemini-2.5-flash";
 
